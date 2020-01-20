@@ -1,0 +1,44 @@
+{
+  "name": "@myvillagellc/mv-shared",
+  "version": "1.0.0",
+  "description": "Shared items used for MyVillage apps.",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepublishOnly": "npm run lint",
+    "prepare": "npm run build",
+    "version": "npm run format && git add -A src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/myvillagellc/mv-shared.git"
+  },
+  "keywords": [],
+  "author": "",
+  "devDependencies": {
+    "prettier": "^1.19.1",
+    "tslint": "^5.20.1",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.7.4"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/myvillagellc"
+  },
+  "dependencies": {
+    "@types/node": "^13.1.7",
+    "bcrypt": "^3.0.6",
+    "class-transformer": "^0.2.3",
+    "class-validator": "^0.9.1",
+    "moment": "^2.24.0",
+    "reflect-metadata": "^0.1.10",
+    "typeorm": "^0.2.5"
+  },
+  "license": "MIT"
+}
