@@ -46,6 +46,9 @@ export class Guardian {
   @Column({ name: 'isPrimary' })
   public isPrimary: boolean;
 
+  @Column({ name: 'externalId' })
+  public externalId: string;
+
   @ManyToMany(
     type => Student,
     student => student.guardians
