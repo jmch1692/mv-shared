@@ -6,4 +6,8 @@ export enum MatchStatusEnum {
   ENROLLED = 'Enrolled',
   UNENROLLED = 'Unenrolled',
   ABANDONED = 'Abandoned',
+  OSA = 'Osa',
+  UNQUALIFIED = 'Unqualified',
+  UNRESPONSIVE = 'Unresponsive',
+  LEAD_WAITLIST = 'Lead Waitlist',
 }
