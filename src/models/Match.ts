@@ -19,7 +19,7 @@ export class Match {
   public id: string;
 
   @Column({ type: 'jsonb', name: 'careNeeds' })
-  public careNeeds: object[];
+  public careNeeds: object;
 
   @IsNotEmpty()
   @Column({ name: 'statusId' })

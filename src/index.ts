@@ -26,13 +26,14 @@ export * from './constants/MatchStatusConstant';
 export * from './constants/SlotTypeConstant';
 export * from './constants/TasksConstant';
 export * from './constants/PreferredStartWindowConstant';
+export * from './constants/CareNeedsType';
 
 /**
  * Export project interfaces
  */
-export * from './interfaces/CareNeedInterface';
 export * from './interfaces/DistanceInterface';
 export * from './interfaces/Slot';
 export * from './interfaces/TaskInterface';
 export * from './interfaces/TimeInterface';
 export * from './interfaces/PreferredStartWindowInterface';
+export * from './interfaces/CareNeedsInterface';
