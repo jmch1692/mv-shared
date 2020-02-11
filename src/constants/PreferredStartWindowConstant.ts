@@ -1,6 +1,6 @@
-import { PreferredStartWindow } from '../interfaces/PreferredStartWindowInterface';
+import { IPreferredStartWindow } from '..';
 
-const PreferredStartWindowObject: PreferredStartWindow = {
+const PreferredStartWindowObject: IPreferredStartWindow = {
     name: '',
     startWindow: '',
 };
@@ -12,7 +12,7 @@ export enum PreferredStartWindowEnum {
     MORE_THAN_6_MONTHS_FROM_NOW = 'More than 6 months from now',
 }
 
-export function getPreferredStartWindow(preferredStartWindow: PreferredStartWindowEnum): PreferredStartWindow {
+export function getPreferredStartWindow(preferredStartWindow: PreferredStartWindowEnum): IPreferredStartWindow {
     switch (preferredStartWindow) {
         case PreferredStartWindowEnum.NONE:
             return {

@@ -12,6 +12,7 @@ import {
 import { MatchStatus } from './MatchStatus';
 import { Program } from './Program';
 import { Student } from './Student';
+import { PreferredStartWindow } from './PreferredStartWindow';
 
 @Entity()
 export class Match {
@@ -31,6 +32,10 @@ export class Match {
 
   @Column({ name: 'startDate' })
   public startDate: Date;
+
+  @ManyToOne(() => PreferredStartWindow)
+  @JoinTable()
+  public startWindow: PreferredStartWindow;
 
   @Column({ type: 'jsonb', name: 'notes' })
   public notes: object;

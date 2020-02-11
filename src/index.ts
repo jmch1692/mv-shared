@@ -9,6 +9,7 @@ export * from './models/Guardian';
 export * from './models/License';
 export * from './models/Match';
 export * from './models/MatchStatus';
+export * from './models/PreferredStartWindow';
 export * from './models/Program';
 export * from './models/Slot';
 export * from './models/SlotType';
