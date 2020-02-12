@@ -35,7 +35,7 @@ export class Match {
 
   @ManyToOne(() => PreferredStartWindow)
   @JoinTable()
-  public startWindow: PreferredStartWindow;
+  public startWindowId: PreferredStartWindow;
 
   @Column({ type: 'jsonb', name: 'notes' })
   public notes: object;
