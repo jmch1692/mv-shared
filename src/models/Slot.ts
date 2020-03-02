@@ -5,8 +5,8 @@ import {
   Entity,
   JoinColumn,
   JoinTable,
-  ManyToMany,
   ManyToOne,
+  OneToMany,
   OneToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn
@@ -40,11 +40,10 @@ export class Slot {
   @JoinTable()
   public program: Program;
 
-  @ManyToMany(
+  @OneToMany(
     type => Enrollment,
-    enrollment => enrollment.slots
+    enrollment => enrollment.slot
   )
-  @JoinTable()
   public enrollments: Enrollment[];
 
   @CreateDateColumn({ type: 'timestamptz', name: 'createdAt' })

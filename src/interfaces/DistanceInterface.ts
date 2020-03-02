@@ -1,4 +1,4 @@
 export interface AddressDistance {
-  distance: string;
+  distance: number;
   unit: string;
 }
