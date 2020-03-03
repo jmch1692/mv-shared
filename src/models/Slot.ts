@@ -3,18 +3,15 @@ import {
   Column,
   CreateDateColumn,
   Entity,
-  JoinColumn,
   JoinTable,
   ManyToOne,
   OneToMany,
-  OneToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn
 } from 'typeorm';
 
 import { Enrollment } from './Enrollment';
 import { Program } from './Program';
-import { SlotType } from './SlotType';
 
 @Entity()
 export class Slot {
@@ -26,12 +23,16 @@ export class Slot {
   public dayOfWeek: string;
 
   @IsNotEmpty()
+  @Column({ name: 'title' })
+  public title: string;
+
+  @IsNotEmpty()
+  @Column({ type: 'jsonb', name: 'availableSchedule' })
+  public availableSchedule: object;
+
+  @IsNotEmpty()
   @Column({ name: 'monthlyPrice' })
   public monthlyPrice: number;
-
-  @OneToOne(type => SlotType)
-  @JoinColumn()
-  public slotType: SlotType;
 
   @ManyToOne(
     type => Program,
