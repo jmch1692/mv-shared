@@ -12,7 +12,6 @@ export * from './models/MatchStatus';
 export * from './models/PreferredStartWindow';
 export * from './models/Program';
 export * from './models/Slot';
-export * from './models/SlotType';
 export * from './models/Student';
 export * from './models/User';
 
