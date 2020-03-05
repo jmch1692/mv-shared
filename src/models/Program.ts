@@ -37,8 +37,8 @@ export class Program {
   @Column({ name: 'acceptSubsidies' })
   public acceptSubsidies: boolean;
 
-  @Column({ name: 'salesforceAccountId' })
-  public salesforceAccountId: string;
+  @Column({ name: 'externalId' })
+  public externalId: string;
 
   @IsNotEmpty()
   @Column({ name: 'addressId' })
