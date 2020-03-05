@@ -30,6 +30,9 @@ export class Educator {
   @Column({ name: 'addressId' })
   public addressId: string;
 
+  @Column({ name: 'externalId' })
+  public externalId: string;
+
   @ManyToOne(type => Address)
   @JoinTable()
   public address: Address;
