@@ -14,7 +14,6 @@ const TaskObject: Task = {
 /**
  * Evaluating Tasks
  */
-
 export enum EvaluatingTasks {
   SCHEDULE_TOUR = 'SCHEDULE_TOUR',
   EDUCATOR_TOUR_EVALUATION = 'EDUCATOR_TOUR_EVALUATION',
@@ -24,7 +23,6 @@ export enum EvaluatingTasks {
 /**
  * Reserved Tasks
  */
-
 export enum ReservedTasks {
   RECEIVE_DEPOSIT_INVOICE = 'RECEIVE_DEPOSIT_INVOICE',
   PAY_DEPOSIT = 'PAY_DEPOSIT',
@@ -35,10 +33,11 @@ export enum ReservedTasks {
 /**
  * Contracted Tasks
  */
-
 export enum ContractedTasks {
   RECEIVE_ENROLLMENT_FORMS = 'RECEIVE_ENROLLMENT_FORMS',
-  COMPLETE_ENROLLMENT_FORMS = 'COMPLETE_ENROLLMENT_FORMS',
+  RECEIVE_INVOICE_FOR_FIRST_SERVICE_PERIOD = 'RECEIVE_INVOICE_FOR_FIRST_SERVICE_PERIOD',
+  PAY_INVOICE_FOR_FIRST_SERVICE_PERIOD = 'PAY_INVOICE_FOR_FIRST_SERVICE_PERIOD',
+  RECURRING_INVOICE_SET_UP = 'RECURRING_INVOICE_SET_UP',
 }
 export function getEvaluatingTask(evaluatingTask: EvaluatingTasks): Task {
   switch (evaluatingTask) {
@@ -107,12 +106,26 @@ export function getContractedTask(contractedTask: ContractedTasks): Task {
         description:
           'Mark complete once you\'ve sent the Enrollment Forms to the family.',
       };
-    case ContractedTasks.COMPLETE_ENROLLMENT_FORMS:
+    case ContractedTasks.RECEIVE_INVOICE_FOR_FIRST_SERVICE_PERIOD:
       return {
         ...TaskObject,
-        name: 'Complete Enrollment Forms',
+        name: 'Receive Invoice For First Service Period',
         description:
-          'Mark complete once the family has completed the Enrollment Forms.',
+          'Mark complete once you\'ve sent the Invoice For First Service Period to the family.',
+      };
+    case ContractedTasks.PAY_INVOICE_FOR_FIRST_SERVICE_PERIOD:
+      return {
+        ...TaskObject,
+        name: 'Pay Invoice For First Service Period',
+        description:
+          'Mark complete once the family has paid the Invoice For First Service Period.',
+      };
+    case ContractedTasks.RECURRING_INVOICE_SET_UP:
+      return {
+        ...TaskObject,
+        name: 'Recurring Invoice Set Up',
+        description:
+          'Mark complete once the Recurring Invoice has been set.',
       };
     default:
       return TaskObject;
