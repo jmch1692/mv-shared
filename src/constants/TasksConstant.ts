@@ -24,10 +24,10 @@ export enum EvaluatingTasks {
  * Reserved Tasks
  */
 export enum ReservedTasks {
+  RECEIVE_REGISTRATION_FORMS = 'RECEIVE_REGISTRATION_FORMS',
+  SIGN_REGISTRATION_FORMS = 'SIGN_REGISTRATION_FORMS',
   RECEIVE_DEPOSIT_INVOICE = 'RECEIVE_DEPOSIT_INVOICE',
   PAY_DEPOSIT = 'PAY_DEPOSIT',
-  SIGN_CONTRACT = 'SIGN_CONTRACT',
-  RECEIVE_CONTRACT = 'RECEIVE_CONTRACT',
   RECEIVE_ENROLLMENT_FORMS = 'RECEIVE_ENROLLMENT_FORMS',
 }
 
@@ -79,18 +79,18 @@ export function getReservedTask(reservedTask: ReservedTasks): Task {
         name: 'Pay Deposit',
         description: 'Mark complete once the family has paid the deposit.',
       };
-    case ReservedTasks.SIGN_CONTRACT:
+    case ReservedTasks.SIGN_REGISTRATION_FORMS:
       return {
         ...TaskObject,
-        name: 'Sign Contract',
-        description: 'Mark complete once the family has signed the contract.',
+        name: 'Sign Registration Forms',
+        description: 'Mark complete once the family has signed the Registration Forms.',
       };
-    case ReservedTasks.RECEIVE_CONTRACT:
+    case ReservedTasks.RECEIVE_REGISTRATION_FORMS:
       return {
         ...TaskObject,
-        name: 'Receive Contract',
+        name: 'Receive Registration Forms',
         description:
-          'Mark complete once you\'ve sent the Contract to the family.',
+          'Mark complete once you\'ve sent the Registration Forms to the family.',
       };
     case ReservedTasks.RECEIVE_ENROLLMENT_FORMS:
       return {
