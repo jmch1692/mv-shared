@@ -28,13 +28,13 @@ export enum ReservedTasks {
   PAY_DEPOSIT = 'PAY_DEPOSIT',
   SIGN_CONTRACT = 'SIGN_CONTRACT',
   RECEIVE_CONTRACT = 'RECEIVE_CONTRACT',
+  RECEIVE_ENROLLMENT_FORMS = 'RECEIVE_ENROLLMENT_FORMS',
 }
 
 /**
  * Contracted Tasks
  */
 export enum ContractedTasks {
-  RECEIVE_ENROLLMENT_FORMS = 'RECEIVE_ENROLLMENT_FORMS',
   RECEIVE_INVOICE_FOR_FIRST_SERVICE_PERIOD = 'RECEIVE_INVOICE_FOR_FIRST_SERVICE_PERIOD',
   PAY_INVOICE_FOR_FIRST_SERVICE_PERIOD = 'PAY_INVOICE_FOR_FIRST_SERVICE_PERIOD',
   RECURRING_INVOICE_SET_UP = 'RECURRING_INVOICE_SET_UP',
@@ -92,6 +92,13 @@ export function getReservedTask(reservedTask: ReservedTasks): Task {
         description:
           'Mark complete once you\'ve sent the Contract to the family.',
       };
+    case ReservedTasks.RECEIVE_ENROLLMENT_FORMS:
+      return {
+        ...TaskObject,
+        name: 'Receive Enrollment Forms',
+        description:
+          'Mark complete once you\'ve sent the Enrollment Forms to the family.',
+      };
     default:
       return TaskObject;
   }
@@ -99,13 +106,6 @@ export function getReservedTask(reservedTask: ReservedTasks): Task {
 
 export function getContractedTask(contractedTask: ContractedTasks): Task {
   switch (contractedTask) {
-    case ContractedTasks.RECEIVE_ENROLLMENT_FORMS:
-      return {
-        ...TaskObject,
-        name: 'Receive Enrollment Forms',
-        description:
-          'Mark complete once you\'ve sent the Enrollment Forms to the family.',
-      };
     case ContractedTasks.RECEIVE_INVOICE_FOR_FIRST_SERVICE_PERIOD:
       return {
         ...TaskObject,
