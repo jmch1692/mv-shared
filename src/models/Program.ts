@@ -40,6 +40,9 @@ export class Program {
   @Column({ name: 'externalId' })
   public externalId: string;
 
+  @Column({ name: 'tourLink' })
+  public tourLink: string;
+
   @IsNotEmpty()
   @Column({ name: 'addressId' })
   public addressId: string;
@@ -88,9 +91,6 @@ export class Program {
 
   /* Custom fields */
   public addressDistance: AddressDistance;
-  public isOpensMatched: boolean;
-  public isStartsMatched: boolean;
-  public isBestMatched: boolean;
   public slotsAvailability: SlotAvailability;
   public opens: Time;
 }
