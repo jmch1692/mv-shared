@@ -14,6 +14,7 @@ import {
 import { Address } from './Address';
 import { Guardian } from './Guardian';
 import { Match } from './Match';
+import { SubsidyType } from './SubsidyType';
 
 @Entity()
 export class Student {
@@ -62,6 +63,13 @@ export class Student {
 
   @Column({ type: 'jsonb', name: 'notes' })
   public notes: object;
+
+  @Column({ name: 'subsidyId' })
+  public subsidyId: string;
+
+  @ManyToOne(type => SubsidyType)
+  @JoinTable()
+  public subsidyType: SubsidyType;
 
   @CreateDateColumn({ type: 'timestamptz', name: 'createdAt' })
   public createdAt: Date;
