@@ -43,6 +43,12 @@ export class Program {
   @Column({ name: 'tourLink' })
   public tourLink: string;
 
+  @Column({ name: 'minimumAge' })
+  public minimumAge: number;
+
+  @Column({ name: 'maximumAge' })
+  public maximumAge: number;
+
   @IsNotEmpty()
   @Column({ name: 'addressId' })
   public addressId: string;
