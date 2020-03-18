@@ -43,6 +43,12 @@ export class Program {
   @Column({ name: 'tourLink' })
   public tourLink: string;
 
+  @Column({ name: 'minimumAge', comment: 'Age is saved in months' })
+  public minimumAge: number;
+
+  @Column({ name: 'maximumAge', comment: 'Age is saved in months' })
+  public maximumAge: number;
+
   @IsNotEmpty()
   @Column({ name: 'addressId' })
   public addressId: string;
