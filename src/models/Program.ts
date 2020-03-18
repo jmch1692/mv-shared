@@ -19,6 +19,8 @@ import { Educator } from './Educator';
 import { License } from './License';
 import { Slot } from './Slot';
 import { Match } from './Match';
+import { SubsidyType } from './SubsidyType';
+import { OpeningState } from './OpeningState';
 
 @Entity()
 export class Program {
@@ -88,6 +90,21 @@ export class Program {
   )
   @JoinTable()
   public licenses: License[];
+
+  @ManyToMany(
+      type => SubsidyType,
+      subsidyType => subsidyType.programs
+  )
+  @JoinTable()
+  public subsidyTypes: SubsidyType[];
+
+  @IsNotEmpty()
+  @Column({ name: 'openingStateId' })
+  public openingStateId: string;
+
+  @ManyToOne(type => OpeningState)
+  @JoinTable()
+  public openingState: OpeningState;
 
   @CreateDateColumn({ type: 'timestamptz', name: 'createdAt' })
   public createdAt: Date;
