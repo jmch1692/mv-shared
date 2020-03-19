@@ -32,10 +32,6 @@ export class Student {
   @Column({ name: 'addressId' })
   public addressId: string;
 
-  @IsNotEmpty()
-  @Column({ name: 'subsidy' })
-  public subsidy: boolean;
-
   @ManyToOne(type => Address)
   @JoinTable()
   public address: Address;
@@ -64,8 +60,8 @@ export class Student {
   @Column({ type: 'jsonb', name: 'notes' })
   public notes: object;
 
-  @Column({ name: 'subsidyId' })
-  public subsidyId: string;
+  @Column({ name: 'subsidyTypeId' })
+  public subsidyTypeId: string;
 
   @ManyToOne(type => SubsidyType)
   @JoinTable()

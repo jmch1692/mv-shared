@@ -35,10 +35,6 @@ export class Program {
   @Column({ name: 'website' })
   public website: string;
 
-  @IsNotEmpty()
-  @Column({ name: 'acceptSubsidies' })
-  public acceptSubsidies: boolean;
-
   @Column({ name: 'externalId' })
   public externalId: string;
 

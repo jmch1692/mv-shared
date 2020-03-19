@@ -14,6 +14,8 @@ export * from './models/Program';
 export * from './models/Slot';
 export * from './models/Student';
 export * from './models/User';
+export * from './models/SubsidyType';
+export * from './models/OpeningState';
 
 /**
  * Export project constants
@@ -27,6 +29,8 @@ export * from './constants/SlotTypeConstant';
 export * from './constants/TasksConstant';
 export * from './constants/PreferredStartWindowConstant';
 export * from './constants/CareNeedsType';
+export * from './constants/OpeningStateConstant';
+export * from './constants/SubsidyTypeConstant'
 
 /**
  * Export project interfaces

@@ -1,8 +1,9 @@
 export enum OpeningStateEnum {
-    WAITLIST = 'Waitlist',
-    TOURING_AND_ENROLLING = 'Touring And Enrolling',
-    TOUR_DATE_SET = 'Tour Date Set',
-    NO_TOUR_DATE = 'No Tour Date',
+    WAITLIST = 'Open (Waitlist)',
+    TOURING_AND_ENROLLING = 'Open (Touring and Enrolling)',
+    PRE_BOOKING = 'Future Opening (Touring and Enrolling/Pre-Booking)',
+    TOUR_DATE_SET = 'Future Opening (Tour Date Set)',
+    NO_TOUR_DATE = 'Future Opening (No Tour Date)',
     BOOST_GROUP = 'Boost Group',
     UNKNOWN = 'Unknown',
 }

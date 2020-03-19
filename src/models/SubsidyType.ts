@@ -2,7 +2,7 @@ import { IsNotEmpty } from 'class-validator';
 import {
     Entity,
     PrimaryGeneratedColumn,
-    OneToMany, CreateDateColumn, UpdateDateColumn, Column
+    CreateDateColumn, UpdateDateColumn, Column, ManyToMany
 } from 'typeorm';
 import {Program} from "./Program";
 
@@ -15,7 +15,7 @@ export class SubsidyType {
     @Column({ name: 'name' })
     public name: string;
 
-    @OneToMany(
+    @ManyToMany(
         type => Program,
         program => program.subsidyTypes
     )
