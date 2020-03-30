@@ -5,3 +5,8 @@ export enum FamiliesSorting {
   FAMILY_CREATED_AT = 'Family Created At',
   MATCH_STAGES = 'Match Stages',
 }
+
+export enum SortingOrder {
+  ASCENDING = 'ASC',
+  DESCENDING = 'DESC'
+}
