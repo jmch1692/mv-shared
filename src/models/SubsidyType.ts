@@ -4,7 +4,7 @@ import {
     PrimaryGeneratedColumn,
     CreateDateColumn, UpdateDateColumn, Column, ManyToMany
 } from 'typeorm';
-import {Program} from "./Program";
+import {Program} from './Program';
 
 @Entity()
 export class SubsidyType {

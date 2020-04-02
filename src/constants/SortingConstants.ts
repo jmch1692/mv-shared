@@ -8,5 +8,5 @@ export enum FamiliesSorting {
 
 export enum SortingOrder {
   ASCENDING = 'ASC',
-  DESCENDING = 'DESC'
+  DESCENDING = 'DESC',
 }
