@@ -6,4 +6,5 @@ export enum OpeningStateEnum {
     NO_TOUR_DATE = 'Future Opening (No Tour Date)',
     BOOST_GROUP = 'Boost Group',
     UNKNOWN = 'Unknown',
+    COVID = 'Temporary Closure (COVID-19)',
 }
