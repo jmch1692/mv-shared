@@ -30,8 +30,8 @@ export * from './constants/TasksConstant';
 export * from './constants/PreferredStartWindowConstant';
 export * from './constants/CareNeedsType';
 export * from './constants/OpeningStateConstant';
-export * from './constants/SubsidyTypeConstant'
-export * from './constants/SortingConstants'
+export * from './constants/SubsidyTypeConstant';
+export * from './constants/SortingConstants';
 
 /**
  * Export project interfaces
