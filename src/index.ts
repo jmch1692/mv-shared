@@ -16,6 +16,8 @@ export * from './models/Student';
 export * from './models/User';
 export * from './models/SubsidyType';
 export * from './models/OpeningState';
+export * from './models/StudentActivityType';
+export * from './models/StudentActivity';
 
 /**
  * Export project constants
@@ -32,6 +34,7 @@ export * from './constants/CareNeedsType';
 export * from './constants/OpeningStateConstant';
 export * from './constants/SubsidyTypeConstant';
 export * from './constants/SortingConstants';
+export * from './constants/StudentActivityTypeConstant';
 
 /**
  * Export project interfaces
@@ -42,3 +45,4 @@ export * from './interfaces/TaskInterface';
 export * from './interfaces/TimeInterface';
 export * from './interfaces/PreferredStartWindowInterface';
 export * from './interfaces/CareNeedsInterface';
+export * from './interfaces/StudentActivity';
