@@ -1,4 +1,4 @@
-import { IsNotEmpty } from 'class-validator';
+import { IsNotEmpty } from "class-validator";
 import {
   Column,
   CreateDateColumn,
@@ -8,30 +8,30 @@ import {
   OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn
-} from 'typeorm';
+} from "typeorm";
 
-import { Enrollment } from './Enrollment';
-import { Program } from './Program';
+import { Enrollment } from "./Enrollment";
+import { Program } from "./Program";
 
 @Entity()
 export class Slot {
-  @PrimaryGeneratedColumn('uuid')
+  @PrimaryGeneratedColumn("uuid")
   public id: string;
 
   @IsNotEmpty()
-  @Column({ name: 'dayOfWeek' })
+  @Column({ name: "dayOfWeek" })
   public dayOfWeek: string;
 
   @IsNotEmpty()
-  @Column({ name: 'title' })
+  @Column({ name: "title" })
   public title: string;
 
   @IsNotEmpty()
-  @Column({ type: 'jsonb', name: 'availableSchedule' })
+  @Column({ type: "jsonb", name: "availableSchedule" })
   public availableSchedule: object;
 
   @IsNotEmpty()
-  @Column({ name: 'monthlyPrice' })
+  @Column({ name: "monthlyPrice" })
   public monthlyPrice: number;
 
   @ManyToOne(
@@ -47,9 +47,9 @@ export class Slot {
   )
   public enrollments: Enrollment[];
 
-  @CreateDateColumn({ type: 'timestamptz', name: 'createdAt' })
+  @CreateDateColumn({ type: "timestamptz", name: "createdAt" })
   public createdAt: Date;
 
-  @UpdateDateColumn({ type: 'timestamptz', name: 'updatedAt' })
+  @UpdateDateColumn({ type: "timestamptz", name: "updatedAt" })
   public updatedAt: Date;
 }

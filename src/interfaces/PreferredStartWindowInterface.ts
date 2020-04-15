@@ -1,4 +1,4 @@
 export interface IPreferredStartWindow {
-    name: string;
-    startWindow: string;
+  name: string;
+  startWindow: string;
 }

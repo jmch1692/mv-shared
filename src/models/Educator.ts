@@ -1,4 +1,4 @@
-import { IsNotEmpty } from 'class-validator';
+import { IsNotEmpty } from "class-validator";
 import {
   Column,
   Entity,
@@ -9,28 +9,28 @@ import {
   AfterLoad,
   CreateDateColumn,
   UpdateDateColumn
-} from 'typeorm';
+} from "typeorm";
 
-import { Address } from './Address';
-import { Program } from './Program';
+import { Address } from "./Address";
+import { Program } from "./Program";
 
 @Entity()
 export class Educator {
-  @PrimaryGeneratedColumn('uuid')
+  @PrimaryGeneratedColumn("uuid")
   public id: string;
 
   @IsNotEmpty()
-  @Column({ name: 'firstName' })
+  @Column({ name: "firstName" })
   public firstName: string;
 
   @IsNotEmpty()
-  @Column({ name: 'lastName' })
+  @Column({ name: "lastName" })
   public lastName: string;
 
-  @Column({ name: 'addressId' })
+  @Column({ name: "addressId" })
   public addressId: string;
 
-  @Column({ name: 'externalId' })
+  @Column({ name: "externalId" })
   public externalId: string;
 
   @ManyToOne(type => Address)
@@ -44,19 +44,19 @@ export class Educator {
   @JoinTable()
   public programs: Program[];
 
-  @Column({ name: 'email' })
+  @Column({ name: "email" })
   public email: string;
 
-  @Column({ name: 'phoneNumber' })
+  @Column({ name: "phoneNumber" })
   public phoneNumber: string;
 
   /* Custom fields */
   public fullname: string;
 
-  @CreateDateColumn({ type: 'timestamptz', name: 'createdAt' })
+  @CreateDateColumn({ type: "timestamptz", name: "createdAt" })
   public createdAt: Date;
 
-  @UpdateDateColumn({ type: 'timestamptz', name: 'updatedAt' })
+  @UpdateDateColumn({ type: "timestamptz", name: "updatedAt" })
   public updatedAt: Date;
 
   @AfterLoad()
