@@ -1,3 +1,3 @@
 export enum DistancesEnum {
-  MILES = "miles"
+  MILES = 'miles',
 }

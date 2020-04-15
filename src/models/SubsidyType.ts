@@ -1,4 +1,4 @@
-import { IsNotEmpty } from "class-validator";
+import { IsNotEmpty } from 'class-validator';
 import {
   Entity,
   PrimaryGeneratedColumn,
@@ -6,16 +6,16 @@ import {
   UpdateDateColumn,
   Column,
   ManyToMany
-} from "typeorm";
-import { Program } from "./Program";
+} from 'typeorm';
+import { Program } from './Program';
 
 @Entity()
 export class SubsidyType {
-  @PrimaryGeneratedColumn("uuid")
+  @PrimaryGeneratedColumn('uuid')
   public id: string;
 
   @IsNotEmpty()
-  @Column({ name: "name" })
+  @Column({ name: 'name' })
   public name: string;
 
   @ManyToMany(
@@ -24,9 +24,9 @@ export class SubsidyType {
   )
   public programs: Program[];
 
-  @CreateDateColumn({ type: "timestamptz", name: "createdAt" })
+  @CreateDateColumn({ type: 'timestamptz', name: 'createdAt' })
   public createdAt: Date;
 
-  @UpdateDateColumn({ type: "timestamptz", name: "updatedAt" })
+  @UpdateDateColumn({ type: 'timestamptz', name: 'updatedAt' })
   public updatedAt: Date;
 }

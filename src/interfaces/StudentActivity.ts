@@ -1,4 +1,4 @@
-import { StudentActivityType, Student } from "..";
+import { StudentActivityType, Student } from '..';
 
 export interface StudentActivityInterface {
   id?: string;

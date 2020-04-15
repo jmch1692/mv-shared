@@ -1,4 +1,4 @@
-import { IsNotEmpty } from "class-validator";
+import { IsNotEmpty } from 'class-validator';
 import {
   Column,
   Entity,
@@ -6,23 +6,23 @@ import {
   ManyToMany,
   CreateDateColumn,
   UpdateDateColumn
-} from "typeorm";
+} from 'typeorm';
 
-import { Program } from "./Program";
+import { Program } from './Program';
 
 @Entity()
 export class License {
-  @PrimaryGeneratedColumn("uuid")
+  @PrimaryGeneratedColumn('uuid')
   public id: string;
 
   @IsNotEmpty()
-  @Column({ name: "description" })
+  @Column({ name: 'description' })
   public description: string;
 
-  @CreateDateColumn({ type: "timestamptz", name: "createdAt" })
+  @CreateDateColumn({ type: 'timestamptz', name: 'createdAt' })
   public createdAt: Date;
 
-  @UpdateDateColumn({ type: "timestamptz", name: "updatedAt" })
+  @UpdateDateColumn({ type: 'timestamptz', name: 'updatedAt' })
   public updatedAt: Date;
 
   @ManyToMany(

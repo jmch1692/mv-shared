@@ -1,24 +1,24 @@
-import { IsNotEmpty } from "class-validator";
+import { IsNotEmpty } from 'class-validator';
 import {
   Entity,
   PrimaryGeneratedColumn,
   CreateDateColumn,
   UpdateDateColumn,
   Column
-} from "typeorm";
+} from 'typeorm';
 
 @Entity()
 export class OpeningState {
-  @PrimaryGeneratedColumn("uuid")
+  @PrimaryGeneratedColumn('uuid')
   public id: string;
 
   @IsNotEmpty()
-  @Column({ name: "name" })
+  @Column({ name: 'name' })
   public name: string;
 
-  @CreateDateColumn({ type: "timestamptz", name: "createdAt" })
+  @CreateDateColumn({ type: 'timestamptz', name: 'createdAt' })
   public createdAt: Date;
 
-  @UpdateDateColumn({ type: "timestamptz", name: "updatedAt" })
+  @UpdateDateColumn({ type: 'timestamptz', name: 'updatedAt' })
   public updatedAt: Date;
 }

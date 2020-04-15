@@ -1,4 +1,4 @@
-import { IsNotEmpty } from "class-validator";
+import { IsNotEmpty } from 'class-validator';
 import {
   Column,
   Entity,
@@ -9,44 +9,44 @@ import {
   AfterLoad,
   CreateDateColumn,
   UpdateDateColumn
-} from "typeorm";
+} from 'typeorm';
 
-import { Address } from "./Address";
-import { Student } from "./Student";
+import { Address } from './Address';
+import { Student } from './Student';
 
-import moment from "moment";
+import moment from 'moment';
 
 @Entity()
 export class Guardian {
-  @PrimaryGeneratedColumn("uuid")
+  @PrimaryGeneratedColumn('uuid')
   public id: string;
 
   @IsNotEmpty()
-  @Column({ name: "firstName" })
+  @Column({ name: 'firstName' })
   public firstName: string;
 
   @IsNotEmpty()
-  @Column({ name: "lastName" })
+  @Column({ name: 'lastName' })
   public lastName: string;
 
-  @Column({ name: "addressId" })
+  @Column({ name: 'addressId' })
   public addressId: string;
 
   @ManyToOne(type => Address)
   @JoinTable()
   public address: Address;
 
-  @Column({ name: "email" })
+  @Column({ name: 'email' })
   public email: string;
 
-  @Column({ name: "phoneNumber" })
+  @Column({ name: 'phoneNumber' })
   public phoneNumber: string;
 
   @IsNotEmpty()
-  @Column({ name: "isPrimary" })
+  @Column({ name: 'isPrimary' })
   public isPrimary: boolean;
 
-  @Column({ name: "externalId" })
+  @Column({ name: 'externalId' })
   public externalId: string;
 
   @ManyToMany(
@@ -62,10 +62,10 @@ export class Guardian {
   public overAgeTwo: number;
   public underAgeTwo: number;
 
-  @CreateDateColumn({ type: "timestamptz", name: "createdAt" })
+  @CreateDateColumn({ type: 'timestamptz', name: 'createdAt' })
   public createdAt: Date;
 
-  @UpdateDateColumn({ type: "timestamptz", name: "updatedAt" })
+  @UpdateDateColumn({ type: 'timestamptz', name: 'updatedAt' })
   public updatedAt: Date;
 
   @AfterLoad()
@@ -78,21 +78,21 @@ export class Guardian {
           .map(student => {
             overTwo =
               moment().diff(
-                moment(student.birthDate, "MM-DD-YYYY"),
-                "months",
+                moment(student.birthDate, 'MM-DD-YYYY'),
+                'months',
                 true
               ) >= 24
                 ? overTwo + 1
                 : overTwo;
             underTwo =
               moment().diff(
-                moment(student.birthDate, "MM-DD-YYYY"),
-                "months",
+                moment(student.birthDate, 'MM-DD-YYYY'),
+                'months',
                 true
               ) < 24
                 ? underTwo + 1
                 : underTwo;
-            return " " + student.firstName;
+            return ' ' + student.firstName;
           })
           .join()
           .trim()

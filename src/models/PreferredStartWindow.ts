@@ -1,4 +1,4 @@
-import { IsNotEmpty } from "class-validator";
+import { IsNotEmpty } from 'class-validator';
 import {
   Entity,
   PrimaryGeneratedColumn,
@@ -6,20 +6,20 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
   Column
-} from "typeorm";
-import { Match } from "./Match";
+} from 'typeorm';
+import { Match } from './Match';
 
 @Entity()
 export class PreferredStartWindow {
-  @PrimaryGeneratedColumn("uuid")
+  @PrimaryGeneratedColumn('uuid')
   public id: string;
 
   @IsNotEmpty()
-  @Column({ name: "name" })
+  @Column({ name: 'name' })
   public name: string;
 
   @IsNotEmpty()
-  @Column({ name: "startWindow" })
+  @Column({ name: 'startWindow' })
   public startWindow: string;
 
   @OneToMany(
@@ -28,9 +28,9 @@ export class PreferredStartWindow {
   )
   public matches: Match[];
 
-  @CreateDateColumn({ type: "timestamptz", name: "createdAt" })
+  @CreateDateColumn({ type: 'timestamptz', name: 'createdAt' })
   public createdAt: Date;
 
-  @UpdateDateColumn({ type: "timestamptz", name: "updatedAt" })
+  @UpdateDateColumn({ type: 'timestamptz', name: 'updatedAt' })
   public updatedAt: Date;
 }

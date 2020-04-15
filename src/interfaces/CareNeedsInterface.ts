@@ -1,4 +1,4 @@
-import { DaysOfWeekEnum } from "..";
+import { DaysOfWeekEnum } from '..';
 
 export interface CareNeeds {
   days: DaysOfWeekEnum[];
