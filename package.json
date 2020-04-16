@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/myvillagellc/mv-shared.git"
+    "url": "https://github.com/jmch1692/mv-shared.git"
   },
   "keywords": [],
   "author": "",
@@ -28,7 +28,7 @@
     "lib/**/*"
   ],
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/myvillagellc"
+    "registry": "https://npm.pkg.github.com/"
   },
   "dependencies": {
     "@types/node": "^13.1.7",
