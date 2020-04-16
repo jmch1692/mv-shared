@@ -1,4 +1,4 @@
-import { IsNotEmpty } from 'class-validator';
+import { IsNotEmpty } from "class-validator";
 import {
   Column,
   Entity,
@@ -6,17 +6,17 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
   OneToMany
-} from 'typeorm';
+} from "typeorm";
 
-import { Match } from './Match';
+import { Match } from "./Match";
 
 @Entity()
 export class MatchStatus {
-  @PrimaryGeneratedColumn('uuid')
+  @PrimaryGeneratedColumn("uuid")
   public id: string;
 
   @IsNotEmpty()
-  @Column({ name: 'name' })
+  @Column({ name: "name" })
   public name: string;
 
   @OneToMany(
@@ -25,9 +25,9 @@ export class MatchStatus {
   )
   public matches: Match[];
 
-  @CreateDateColumn({ type: 'timestamptz', name: 'createdAt' })
+  @CreateDateColumn({ type: "timestamptz", name: "createdAt" })
   public createdAt: Date;
 
-  @UpdateDateColumn({ type: 'timestamptz', name: 'updatedAt' })
+  @UpdateDateColumn({ type: "timestamptz", name: "updatedAt" })
   public updatedAt: Date;
 }
