@@ -38,7 +38,7 @@
     "class-validator": "^0.9.1",
     "moment": "^2.24.0",
     "reflect-metadata": "^0.1.10",
-    "typeorm": "^0.2.5",
+    "typeorm": "^0.2.25",
     "typescript": "^3.7.4"
   },
   "license": "MIT"
